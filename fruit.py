@@ -12,5 +12,9 @@ class Fruit:
         self.pos[1]+=self.speed[1]
         self.speed[1]+=G*dt
 
-
-    
+    def is_in_bound(self, max_pos):
+        if self.pos[0]+self.size < 0 or self.pos[1]+self.size < 0:
+            return False
+        if self.pos[0]-self.size > max_pos[0] or self.pos[1]-self.size > max_pos[1]:
+            return False
+        return True
