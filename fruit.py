@@ -1,4 +1,5 @@
 G = 20
+RED = (200, 50, 100)
 
 class Fruit:
     def __init__(self, size, color, pos, speed):
@@ -18,3 +19,8 @@ class Fruit:
         if self.pos[0]-self.size > max_pos[0] or self.pos[1]-self.size > max_pos[1]:
             return False
         return True
+    
+    def hit(self):
+        self.speed[0] = 0
+        self.color=RED
+        
